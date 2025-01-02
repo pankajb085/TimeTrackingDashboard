@@ -56,6 +56,8 @@ main {
     }
 
     img {
+        border: 3px solid $color-white;
+        border-radius: 50%;
         width: 4rem;
         aspect-ratio: 1 / 1;
     }   
@@ -93,7 +95,11 @@ main {
     padding: 1.75rem 1.5rem;
     border-radius: $border-radius-default;
     background-color: $color-bg-card;
-    
+    transition: background-color .2s ease-in;
+    &:hover {
+        background-color: #33397A;
+    }
+
     .card-title {
         @extend .flex-row;
         margin-bottom: 6px;
@@ -107,7 +113,7 @@ main {
             align-self: center;
 
             &:hover {
-                content: url('/images/icon-ellipsis-active.svg');
+                content: url('../images/icon-ellipsis-active.svg');
             }
         }
     }
@@ -131,32 +137,32 @@ main {
 
 .work-card {
     background-color: $color-bg-work-card;
-    background-image: url('/images/icon-work.svg');
+    background-image: url('../images/icon-work.svg');
 }
 
 .play-card {
     background-color: $color-bg-play-card;
-    background-image: url('/images/icon-play.svg');
+    background-image: url('../images/icon-play.svg');
 }
 
 .study-card {
     background-color: $color-bg-study-card;
-    background-image: url('/images/icon-study.svg');
+    background-image: url('../images/icon-study.svg');
 }
 
 .exercise-card {
     background-color: $color-bg-exercise-card;
-    background-image: url('/images/icon-exercise.svg');
+    background-image: url('../images/icon-exercise.svg');
 }
 
 .social-card {
     background-color: $color-bg-social-card;
-    background-image: url('/images/icon-social.svg');
+    background-image: url('../images/icon-social.svg');
 }
 
 .self-care-card {
     background-color: $color-bg-self-care-card;
-    background-image: url('/images/icon-self-care.svg');
+    background-image: url('../images/icon-self-care.svg');
 }
 
 @media screen and (min-width: 1000px) {
