@@ -1,0 +1,224 @@
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, p, body {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.flex-row, .card-info .time-info, .card-info .card-title, .time-duration {
+  display: flex;
+  justify-content: space-between;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0E1323;
+  color: #FFF;
+  font-family: "Rubik", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  letter-spacing: 0px;
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.dashboard-container {
+  display: grid;
+  gap: 1.5rem;
+  padding-block: 5rem;
+}
+
+.card {
+  padding-top: 38px;
+  border-radius: 1rem;
+  background-repeat: no-repeat;
+  background-position: right 5% top -15%;
+  cursor: pointer;
+}
+
+.report-card {
+  border-radius: 1rem;
+  background-color: #1C204B;
+}
+
+.user-info {
+  background-color: #5747EA;
+  padding: 2.25rem 2rem;
+  border-radius: 1rem;
+  display: flex;
+  gap: 1.25rem;
+}
+.user-info-details {
+  align-self: center;
+}
+.user-info img {
+  width: 4rem;
+  aspect-ratio: 1/1;
+}
+.user-info p {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #BBC0FF;
+}
+.user-info .user-name {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.time-duration {
+  color: #7078C9;
+  font-size: 1.125rem;
+  font-weight: 400;
+  padding: 1.5rem 2rem;
+}
+.time-duration a {
+  color: inherit;
+}
+.time-duration a:is(:hover, :active, :focus), .time-duration a.active {
+  color: #FFF;
+}
+
+.card-info {
+  padding: 1.75rem 1.5rem;
+  border-radius: 1rem;
+  background-color: #1C204B;
+}
+.card-info .card-title {
+  margin-bottom: 6px;
+}
+.card-info .card-title .title {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.card-info .card-title img {
+  align-self: center;
+}
+.card-info .card-title img:hover {
+  content: url("/images/icon-ellipsis-active.svg");
+}
+.card-info .time-info .current-time {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.card-info .time-info .last-time {
+  color: #BBC0FF;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  align-self: center;
+}
+
+.work-card {
+  background-color: #FF8B64;
+  background-image: url("/images/icon-work.svg");
+}
+
+.play-card {
+  background-color: #55C2E6;
+  background-image: url("/images/icon-play.svg");
+}
+
+.study-card {
+  background-color: #FF5E7D;
+  background-image: url("/images/icon-study.svg");
+}
+
+.exercise-card {
+  background-color: #4BCF82;
+  background-image: url("/images/icon-exercise.svg");
+}
+
+.social-card {
+  background-color: #7335D2;
+  background-image: url("/images/icon-social.svg");
+}
+
+.self-care-card {
+  background-color: #F1C75B;
+  background-image: url("/images/icon-self-care.svg");
+}
+
+@media screen and (min-width: 1000px) {
+  .dashboard-container {
+    gap: 1.875rem;
+    grid-template-areas: "report work play study" "report exercise social self-care";
+    grid-template-columns: repeat(4, 255px);
+  }
+  .user-info {
+    padding: 2.25rem 2rem 5rem;
+    flex-direction: column;
+    gap: 2.6875rem;
+  }
+  .user-info-details {
+    align-self: flex-start;
+  }
+  .user-info img {
+    width: 4.875rem;
+  }
+  .user-info .user-name {
+    font-size: 2.5rem;
+  }
+  .time-duration {
+    flex-direction: column;
+    padding: 26px 2rem 2rem 2rem;
+    gap: 1.25rem;
+  }
+  .card {
+    padding-top: 45px;
+  }
+  .card-info {
+    padding: 2rem;
+  }
+  .card-info .card-title {
+    margin-bottom: 1.5rem;
+  }
+  .card-info .time-info {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .card-info .time-info .current-time {
+    font-size: 3.5rem;
+  }
+  .card-info .time-info .last-time {
+    align-self: flex-start;
+  }
+  .work-card {
+    grid-area: work;
+  }
+  .play-card {
+    grid-area: play;
+  }
+  .study-card {
+    grid-area: study;
+  }
+  .exercise-card {
+    grid-area: exercise;
+  }
+  .social-card {
+    grid-area: social;
+  }
+  .self-care-card {
+    grid-area: self-care;
+  }
+  .report-card {
+    grid-area: report;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

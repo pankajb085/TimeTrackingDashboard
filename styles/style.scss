@@ -1,0 +1,247 @@
+@use "reset";
+@use "variables" as *;
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0E1323;
+    color: $color-white;
+    font-family: "Rubik", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    letter-spacing: 0px;
+}
+
+main {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.dashboard-container {
+    display: grid;
+    gap: 1.5rem;
+    padding-block: 5rem;
+}
+
+.card {
+    padding-top: 38px;
+    border-radius: $border-radius-default;
+    background-repeat: no-repeat;
+    background-position: right 5% top -15%;
+    cursor: $cursor;
+}
+
+.report-card {
+    border-radius: $border-radius-default;
+    background-color: $color-bg-card;
+}
+
+.user-info {
+    background-color: $color-fore-first-card;
+    padding: 2.25rem 2rem;
+    border-radius: $border-radius-default;
+    display: flex;
+    gap: 1.25rem;
+
+    &-details {
+        align-self: center;
+    }
+
+    img {
+        width: 4rem;
+        aspect-ratio: 1 / 1;
+    }   
+
+    p {
+        font-size: $font-size-small;
+        font-weight: $font-wt-regular;
+        color: #BBC0FF;
+    }
+
+    .user-name {
+        font-size: $font-size-large;
+        font-weight: $font-wt-light;
+    }
+}
+
+.time-duration {
+    @extend .flex-row;
+    color: #7078C9;
+    font-size: $font-size-medium;
+    font-weight: $font-wt-regular;
+    padding: 1.5rem 2rem;
+
+    a {
+        color: inherit;
+
+        &:is(:hover, :active, :focus), &.active {
+            color: $color-white;
+        }
+    }
+
+}
+
+.card-info {
+    padding: 1.75rem 1.5rem;
+    border-radius: $border-radius-default;
+    background-color: $color-bg-card;
+    
+    .card-title {
+        @extend .flex-row;
+        margin-bottom: 6px;
+
+        .title {
+            font-size: $font-size-medium;
+            font-weight: $font-wt-medium;
+        }
+
+        img {
+            align-self: center;
+
+            &:hover {
+                content: url('/images/icon-ellipsis-active.svg');
+            }
+        }
+    }
+
+    .time-info {
+        @extend .flex-row;
+
+        .current-time {
+            font-size: $font-size-xlarge;
+            font-weight: $font-wt-light;
+        }
+
+        .last-time {
+            color: #BBC0FF;
+            font-size: $font-size-small;
+            font-weight: $font-wt-regular;
+            align-self: center;
+        }
+    }
+}
+
+.work-card {
+    background-color: $color-bg-work-card;
+    background-image: url('/images/icon-work.svg');
+}
+
+.play-card {
+    background-color: $color-bg-play-card;
+    background-image: url('/images/icon-play.svg');
+}
+
+.study-card {
+    background-color: $color-bg-study-card;
+    background-image: url('/images/icon-study.svg');
+}
+
+.exercise-card {
+    background-color: $color-bg-exercise-card;
+    background-image: url('/images/icon-exercise.svg');
+}
+
+.social-card {
+    background-color: $color-bg-social-card;
+    background-image: url('/images/icon-social.svg');
+}
+
+.self-care-card {
+    background-color: $color-bg-self-care-card;
+    background-image: url('/images/icon-self-care.svg');
+}
+
+@media screen and (min-width: 1000px) {
+    .dashboard-container {
+        gap: 1.875rem;
+        grid-template-areas: 
+        "report work play study"
+        "report exercise social self-care"
+        ;
+        grid-template-columns: repeat(4, 255px);
+    }
+
+    .user-info {
+        padding: 2.25rem 2rem 5rem;
+        flex-direction: column;
+        gap: 2.6875rem;   
+    
+        &-details {
+            align-self: flex-start;
+        }
+    
+        img {
+            width: 4.875rem;
+        }   
+    
+        .user-name {
+            font-size: $font-size-large-desktop;
+        }
+    }
+    
+    .time-duration {
+        flex-direction: column;
+        padding: 26px 2rem 2rem 2rem;
+        gap: 1.25rem;
+    }
+
+    .card {
+        padding-top: 45px;
+    }
+
+    .card-info {
+        padding: 2rem;
+        
+        .card-title {
+            margin-bottom: 1.5rem;
+        }
+    
+        .time-info {
+            flex-direction: column;
+            gap: .5rem;
+            .current-time {
+                font-size: $font-size-xlarge-desktop;
+            }
+
+            .last-time {
+                align-self: flex-start;
+            }
+        }
+    }
+
+    .work-card {
+        grid-area: work;
+    }
+    
+    .play-card {
+        grid-area: play;
+    }
+    
+    .study-card {
+        grid-area: study;
+    }
+    
+    .exercise-card {
+        grid-area: exercise;
+    }
+    
+    .social-card {
+        grid-area: social;
+    }
+    
+    .self-care-card {
+        grid-area: self-care;
+    }
+
+    .report-card {
+        grid-area: report;
+    }
+}
